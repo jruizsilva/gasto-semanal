@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Gasto semanal</title>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="css/normalize.css" />
+		<link rel="stylesheet" href="css/styles.css" />
+	</head>
+	<body>
+		<header class="header">
+			<h1 class="header__title">Gasto semanal</h1>
+		</header>
+		<section class="presupuesto" id="presupuesto">
+			<form action="#" class="formulario" id="formulario-presupuesto">
+				<div class="campo">
+					<label for="presupuesto-input" class="label">Presupuesto:</label>
+					<input
+						type="text"
+						id="presupuesto-input"
+						name="presupuesto"
+						class="input"
+						placeholder="Ingrese su presupuesto semanal"
+					/>
+				</div>
+				<div class="contenedor-submit">
+					<button type="submit" class="submit" id="submit-presupuesto">
+						Agregar
+					</button>
+				</div>
+			</form>
+		</section>
+		<main class="main hidden" id="main">
+			<div class="contenedor-flex">
+				<section class="agregar-gastos">
+					<h2>Añade tus gastos aqui</h2>
+					<form action="#" class="formulario" id="formulario-gasto">
+						<div class="campo">
+							<label for="nombre-gasto" class="label">Gasto: </label>
+							<input
+								type="text"
+								id="nombre-gasto"
+								name="nombre-gasto"
+								class="input"
+								placeholder="Ingrese el nombre del gasto"
+							/>
+						</div>
+						<div class="campo">
+							<label for="precio-gasto" class="label">Precio: </label>
+							<input
+								type="text"
+								id="precio-gasto"
+								name="precio-gasto"
+								class="input"
+								placeholder="Ingrese el precio del gasto"
+							/>
+						</div>
+						<div class="contenedor-submit">
+							<button type="submit" class="submit" id="submit-gasto">
+								Agregar
+							</button>
+						</div>
+					</form>
+				</section>
+				<section class="listado-gastos" id="listado-gastos">
+					<h2>Listado de gastos</h2>
+					<ul class="listado-gastos__ul" id="listado-gastos__ul"></ul>
+				</section>
+			</div>
+		</main>
+
+		<template id="template-gasto">
+			<li class="gasto" id="gasto" data-id="">
+				<span class="gasto-nombre" id="gasto-nombre"></span
+				><span class="gasto-precio" id="gasto-precio"></span
+				><span class="gasto-borrar" id="borrar-gasto">X</span>
+			</li>
+		</template>
+		<template id="template-error">
+			<div class="error" id="error">
+				<p class="error-paragraph" id="error-paragraph"></p>
+			</div>
+		</template>
+		<template id="template-presupuesto">
+			<div class="contenedor-presupuesto" id="contenedor-presupuesto">
+				<p class="contenedor-presupuesto__actual">
+					Presupuesto: $
+					<span class="presupuesto-actual" id="presupuesto-actual"></span>
+				</p>
+				<p
+					class="contenedor-presupuesto__restante"
+					id="contenedor-presupuesto__restante"
+				>
+					Restante: $
+					<span class="presupuesto-restante" id="presupuesto-restante"></span>
+				</p>
+			</div>
+		</template>
+		<script src="js/app.js"></script>
+	</body>
+</html>
